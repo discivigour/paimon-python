@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ################################################################################
 #  Licensed to the Apache Software Foundation (ASF) under one
 #  or more contributor license agreements.  See the NOTICE file
@@ -16,28 +17,15 @@
 # limitations under the License.
 ################################################################################
 
-name: Check Code Style & Run Tests
-
-on:
-  push:
-  pull_request:
-    paths-ignore:
-      - 'dev/**'
-      - 'java-based-implementation/paimon-python-java-bridge/**'
-      - '**/*.md'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.number || github.run_id }}
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run lint-python.sh
-        run: |
-         chmod +x dev/lint-python.sh
-         . dev/lint-python.sh
+function random_timezone() {
+    local rnd=$(expr $RANDOM % 25)
+    local hh=$(expr $rnd / 2)
+    local mm=$(expr $rnd % 2 \* 3)"0"
+    local sgn=$(expr $RANDOM % 2)
+    if [ $sgn -eq 0 ]
+    then
+        echo "GMT+$hh:$mm"
+    else
+        echo "GMT-$hh:$mm"
+    fi
+}
