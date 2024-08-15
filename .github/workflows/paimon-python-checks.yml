@@ -31,10 +31,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint-python:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Run lint-python.sh
         run: |
           . dev/lint-python.sh
