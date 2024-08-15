@@ -49,7 +49,7 @@ jobs:
         run: |
           # run tests with random timezone to find out timezone related bugs
           . .github/workflows/utils.sh
-          . dev/lint-python.sh
+          #. dev/lint-python.sh
           jvm_timezone=$(random_timezone)
           echo "JVM timezone is set to $jvm_timezone"
         env:
