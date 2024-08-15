@@ -23,7 +23,6 @@
 
 # Download some software, such as miniconda.sh
 function download() {
-    echo "hello"
     local DOWNLOAD_STATUS=
     if hash "wget" 2>/dev/null; then
         # because of the difference of all versions of wget, so we turn of the option --show-progress
@@ -654,7 +653,7 @@ function mypy_check() {
     fi
 }
 ###############################################################All Checks Definitions###############################################################
-
+echo "hello"
 # CURRENT_DIR is "paimon-python/dev/"
 CURRENT_DIR="$(cd "$( dirname "$0" )" && pwd)"
 
