@@ -23,6 +23,7 @@
 
 # Download some software, such as miniconda.sh
 function download() {
+    echo "hello"
     local DOWNLOAD_STATUS=
     if hash "wget" 2>/dev/null; then
         # because of the difference of all versions of wget, so we turn of the option --show-progress
