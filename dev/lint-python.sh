@@ -797,7 +797,7 @@ done
 
 # decides whether to skip check stage
 skip_checks=0
-
+echo "hello world"
 if [[ ${CLEAN_UP_FLAG} -eq 1 ]]; then
     printf "clean up python environment"
     rm -rf ${CONDA_HOME}
