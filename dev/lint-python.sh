@@ -813,7 +813,7 @@ fi
 
 # collect checks according to the options
 collect_checks
-
+echo "hello world2"
 # If exec the script with the param: -f, all progress will be re-run
 if [ $FORCE_START -eq 1 ]; then
     STAGE="install"
